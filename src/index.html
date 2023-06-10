@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <script defer src="script.js"></script>
+    <title>Clock</title>
+  </head>
+  <body class="bg-[#1c1a31] flex justify-center items-center min-h-screen">
+    <div
+      class="bg-[#20203b] w-[40rem] relative main-content rounded-lg grid sm:grid-cols-3 transition-all duration-500"
+    >
+      <div
+        class="absolute top-2 right-2 z-10 text-slate-400 cursor-pointer w-8 h-8 flex items-center justify-center close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+
+      <div class="text-slate-100 sm:col-span-2 pt-10">
+        <h1 class="text-lg font-medium px-8">Absolute time range</h1>
+
+        <div
+          name=""
+          id="select"
+          class="mx-8 mt-4 bg-[#1c1a31] w-[5rem] rounded-md flex items-center justify-center text-[#6f70ff] border border-[#2a294c] cursor-pointer"
+        >
+          <span class="select-time view py-2 px-4">H</span>
+          <span class="select-time hidden py-2 px-4">Min</span>
+        </div>
+
+        <form action="#" class="px-8 form content">
+          <div class="mt-8 flex flex-col gap-1">
+            <label for="from" class="text-sm text-slate-200">From</label>
+            <input
+              type="number"
+              name=""
+              placeholder="now-1h"
+              id="from"
+              class="py-2 px-3 rounded-md bg-transparent outline-none border-2 border-[#1c1a31] focus:border-[#4d3c45] transition-all text-sm"
+            />
+          </div>
+
+          <div class="mt-8 flex flex-col gap-1">
+            <label for="to" class="text-sm text-slate-200">To</label>
+            <input
+              type="number"
+              name=""
+              placeholder="now"
+              id="to"
+              class="py-2 px-3 rounded-md bg-transparent outline-none border-2 border-[#1c1a31] focus:border-[#4d3c45] transition-all text-sm"
+            />
+          </div>
+
+          <button
+            class="py-2.5 px-6 my-6 rounded-3xl bg-gradient-to-r from-[#6f70ff] to-[#6f70ff] text-sm shadow-xl hover:shadow-[#6f70ff]/30 transition-all"
+          >
+            Apply time range
+          </button>
+        </form>
+
+        <!--  -->
+        <form action="#" class="px-8 form-2 content hidden">
+          <div class="mt-8 flex flex-col gap-1">
+            <label for="from" class="text-sm text-slate-200">From</label>
+            <input
+              type="number"
+              name=""
+              placeholder="now-1m"
+              id="from-2"
+              class="py-2 px-3 rounded-md bg-transparent outline-none border-2 border-[#1c1a31] focus:border-[#4d3c45] transition-all text-sm"
+            />
+          </div>
+
+          <div class="mt-8 flex flex-col gap-1">
+            <label for="to" class="text-sm text-slate-200">To</label>
+            <input
+              type="number"
+              name=""
+              placeholder="now"
+              id="to-2"
+              class="py-2 px-3 rounded-md bg-transparent outline-none border-2 border-[#1c1a31] focus:border-[#4d3c45] transition-all text-sm"
+            />
+          </div>
+
+          <button
+            class="py-2.5 px-6 my-6 rounded-3xl bg-gradient-to-r from-[#6f70ff] to-[#6f70ff] text-sm shadow-xl hover:shadow-[#6f70ff]/30 transition-all"
+          >
+            Apply time range
+          </button>
+        </form>
+        <!--  -->
+
+        <p class="text-xs text-center mt-12 text-slate-400">
+          Want to find out more?
+          <a
+            href="https://icodethis.com/Ansarullah"
+            class="border-b hover:border-transparent"
+            >Read the documentation</a
+          >
+        </p>
+
+        <div
+          class="w-full border-t-2 border-[#1c1a31] mt-8 px-8 flex items-center justify-between pt-4"
+        >
+          <span class="uppercase text-sm bg-[#2a294c] py-1 px-6 rounded-3xl"
+            >utc</span
+          >
+          <a
+            href="#"
+            class="text-xs text-slate-400 border-b border-slate-400 hover:border-transparent change"
+            >Change time zone</a
+          >
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div
+        class="text-slate-100 border-l-2 px-4 border-[#1c1a31] py-10 relative h-[35rem]"
+      >
+        <h2 class="text-lg">Relative time range</h2>
+
+        <div class="times mt-8 h-[80%] overflow-hidden">
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 5 minutes
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 25 minutes
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 35 minutes
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 1 hours
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 5 hours
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 10 hours
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 11 hours
+          </p>
+          <p
+            class="py-2 px-3 rounded-3xl hover:bg-[#1c1a31] transition-all text-sm cursor-pointer"
+          >
+            Last 12 hours
+          </p>
+        </div>
+
+        <a
+          href="#"
+          class="absolute bottom-0 mb-4 text-sm load text-slate-400 border-b border-transparent hover:border-slate-400 left-6"
+          >Load more</a
+        >
+      </div>
+    </div>
+
+    <!-- Range Time-->
+
+    <div
+      class="fixed top-1/2 -translate-y-1/2 bg-[#20203b] text-slate-100 w-[10rem] h-[3rem] rounded-lg flex items-center justify-center cursor-pointer range translate-x-[200%] opacity-0 -z-10 transition-all duration-500"
+    >
+      Range Time
+    </div>
+  </body>
+</html>
