@@ -1,1 +1,1 @@
-# Range-Time 
+# Range-Time Applications. Icodethis.com Daily challenge
